@@ -1,0 +1,26 @@
+<div class="list-wrap">
+  <ul class="table-row">
+    <li>Name(email)</li>
+    <li>Phone</li>
+    <li>Job</li>
+    <li>Status</li>
+    <li></li>
+  </ul>
+
+  <ul class="table-row" *ngFor="let item of data?.items | paginate: { itemsPerPage: 10, currentPage: p }">
+    <li>{{item.email}}</li>
+    <li>{{item.phone}}</li>
+    <li>{{item?._job?.title}}</li>
+    <li>{{item.status}}
+    <span timeago [date]="item?.created_at"></span>
+    </li>
+    <li>
+      <button class="action-btn">Remove</button>
+      <button *ngIf="item?.resume && item?.resume?.url" (click)="downloadResume(item?.resume?.url)" class="action-btn">Download</button>
+    </li>
+  </ul>
+  <pagination-controls (pageChange)="p = $event"
+                       previousLabel="First" [responsive]="true"></pagination-controls>
+
+
+</div>

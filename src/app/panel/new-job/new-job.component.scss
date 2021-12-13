@@ -1,0 +1,111 @@
+.form-wrap{
+  .title{
+    color: #252B42;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  form{
+    .form-control{
+      background: #F9F9F9;
+      border: 1px solid #E6E6E6;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .select-control{
+      background: #F9F9F9;
+      border: 1px solid #E6E6E6;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 28px;
+      letter-spacing: 0.2px;
+      color: #737373;
+    }
+
+    &::placeholder{
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 28px;
+      letter-spacing: 0.2px;
+      color: #737373;
+    }
+
+    label{
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+      color: #252B42;
+      margin-bottom: 15px;
+    }
+    .btn-add-more{
+      padding: 15px 23px;
+      background: #23A6F0;
+      border-radius: 5px;
+      color: white;
+      border: 1px solid #23A6F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    .upload-file{
+      background: #F9F9F9;
+      border: 1px solid #DADADA;
+      border-radius: 5px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      span{
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 0.2px;
+        color: #737373;
+        margin-left: 15px;
+      }
+    }
+
+    .btn-submit{
+      background: #23A6F0;
+      border-radius: 5px;
+      padding: 15px 40px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 14px;
+      border: unset;
+      margin: 22px auto;
+      display: block;
+    }
+
+    .btn-choose{
+      background: #23A6F0;
+      border-radius: 5px;
+      padding: 15px 40px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 14px;
+      border: unset;
+      width: fit-content;
+    }
+    .note{
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 28px;
+      letter-spacing: 0.2px;
+      color: #737373;
+    }
+  }
+}
