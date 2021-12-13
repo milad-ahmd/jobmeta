@@ -27,7 +27,7 @@
     <li></li>
   </ul>
 
-  <ul class="table-row" *ngFor="let item of data?.items | paginate: { itemsPerPage: 10, currentPage: p }">
+  <ul class="table-row" *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }">
     <li>{{item.email}}</li>
     <li>{{item.phone}}</li>
     <li>{{item?._job?.title}}</li>

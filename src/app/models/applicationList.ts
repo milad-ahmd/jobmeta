@@ -50,5 +50,5 @@ export interface ApplicationList {
     prevPage?: any;
     itemsTotal: number;
     pageTotal: number;
-    items: Application[];
+    items: Application[] | [];
 }

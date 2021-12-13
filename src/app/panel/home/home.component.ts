@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApplicationService} from "../../services/application.service";
-import {ApplicationList} from "../../models/applicationList";
+import {Application, ApplicationList} from "../../models/applicationList";
 import {JobList} from "../../models/jobList";
 import {JobService} from "../../services/job.service";
 
@@ -10,9 +10,9 @@ import {JobService} from "../../services/job.service";
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    data: ApplicationList | undefined;
+    detail: ApplicationList | undefined;
+    data: Application[] = [];
     p: number = 1;
-    collection: [1, 2, 3, 4] | any;
     jobs: JobList | undefined;
 
     constructor(private applicationService: ApplicationService,
@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
     getApplicationList() {
         this.applicationService.getApplications().subscribe((res: ApplicationList) => {
             console.log(res);
-            this.data = res;
+            this.detail = res;
+            this.data = res.items;
         })
     }
 
