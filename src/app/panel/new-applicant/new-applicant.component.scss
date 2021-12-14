@@ -79,6 +79,10 @@
       border: unset;
       margin: 22px auto;
       display: block;
+      &:disabled{
+        cursor: no-drop;
+        opacity: 0.6;
+      }
     }
   }
 }

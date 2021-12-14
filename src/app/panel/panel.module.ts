@@ -7,9 +7,10 @@ import {HomeComponent} from './home/home.component';
 import {NewApplicantComponent} from './new-applicant/new-applicant.component';
 import {NewJobComponent} from './new-job/new-job.component';
 import {CoreModule} from "../core/core.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgxPaginationModule} from "ngx-pagination";
 import {TimeagoModule} from "ngx-timeago";
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import {TimeagoModule} from "ngx-timeago";
         PanelRoutingModule,
         CoreModule,
         FormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        LeafletModule,
+        ReactiveFormsModule
     ]
 })
 export class PanelModule {

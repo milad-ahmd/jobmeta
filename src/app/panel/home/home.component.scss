@@ -11,7 +11,6 @@
       line-height: 24px;
       letter-spacing: 0.1px;
       color: #000000;
-
       &:nth-child(1) {
         width: 20%;
       }
@@ -50,8 +49,25 @@
         display: block;
       }
     }
+
+    .sort{
+      display: flex;
+      align-items: center;
+      .sort-icon{
+        width: 36px;
+        height: 36px;
+        background: #F9F9F9;
+        border: 1px solid #23A6F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+    }
   }
 }
+
 .header-search{
   display: flex;
   .form-control{
@@ -62,7 +78,6 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     padding: 15px;
-    margin-bottom: 20px;
     border-right: unset;
     min-height: 58px;
     min-width: 230px;
@@ -73,7 +88,6 @@
     border: 1px solid #E6E6E6;
     border-radius: 0;
     padding: 15px;
-    margin-bottom: 20px;
     font-weight: normal;
     font-size: 14px;
     line-height: 28px;
@@ -94,5 +108,56 @@
     justify-content: center;
     height: 58px;
     min-width: 60px;
+  }
+}
+
+
+::ng-deep.ngx-pagination{
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  display: block;
+  margin: auto!important;
+  width: fit-content;
+  padding: 0;
+}
+
+::ng-deep .ngx-pagination .pagination-previous.disabled {
+  background: #F3F3F3;
+  padding: 1rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+::ng-deep .ngx-pagination .pagination-next.disabled {
+  background: #F3F3F3;
+  padding: 1rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+::ng-deep .ngx-pagination .pagination-previous.disabled::before {
+  content: none!important;
+}
+::ng-deep .ngx-pagination .pagination-previous a::before {
+  content: none!important;
+}
+::ng-deep .ngx-pagination .pagination-next.disabled::after {
+  content: none!important;
+}
+::ng-deep.ngx-pagination .pagination-next a::after {
+  content: none!important;
+}
+
+::ng-deep.ngx-pagination .current{
+  padding: 1rem 1rem!important;
+}
+
+::ng-deep.ngx-pagination li a{
+  padding: 1rem 1rem!important;
+}
+
+::ng-deep .ngx-pagination li{
+  border-left: 1px solid #E8E8E8;
+  &:first-child{
+    border-left: unset;
   }
 }

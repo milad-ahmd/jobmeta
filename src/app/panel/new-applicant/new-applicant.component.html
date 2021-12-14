@@ -1,77 +1,87 @@
-<div class="col-md-12">
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <div class="form-wrap">
-        <div class="title">
-          <h6>new</h6>
-          <h2>Applicant</h2>
-        </div>
+<app-header>
+</app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="form-wrap">
+                <div class="title">
+                    <h6>new</h6>
+                    <h2>Applicant</h2>
+                </div>
+                <form [formGroup]="form">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control w-100" [(ngModel)]="application.name"
+                                       name="name" formControlName="name"
+                                       placeholder="Full Name *">
+                            </div>
 
-        <form>
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-6">
-                <input class="form-control w-100" placeholder="Full Name *">
-              </div>
+                            <div class="col-md-6">
+                                <input class="form-control w-100" [(ngModel)]="application.email"
+                                       name="email" formControlName="email"
+                                       placeholder="Email * ">
+                            </div>
+                        </div>
 
-              <div class="col-md-6">
-                <input class="form-control w-100" placeholder="Email * ">
-              </div>
-            </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control w-100" [(ngModel)]="application.phone"
+                                       name="phone" formControlName="phone"
+                                       placeholder="Phone *">
+                            </div>
 
-            <div class="row">
-              <div class="col-md-6">
-                <input class="form-control w-100" placeholder="Phone *">
-              </div>
+                            <div class="col-md-6">
+                                <select class="select-control w-100" name="status" formControlName="status">
+                                    <option selected>Status</option>
+                                </select>
+                            </div>
+                        </div>
 
-              <div class="col-md-6">
-                <select class="select-control w-100">
-                  <option selected>Status</option>
-                </select>
-              </div>
-            </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select class="select-control w-100" [(ngModel)]="application.job_id" name="job" formControlName="job">
+                                    <option *ngFor="let item of jobs?.items" [value]="item.id">{{item?.title}}</option>
+                                </select>
+                            </div>
 
-            <div class="row">
-              <div class="col-md-6">
-                <select class="select-control w-100">
-                  <option selected>Job</option>
-                </select>
-              </div>
+                            <div class="col-md-6">
+                                <button class="btn-add-more" [routerLink]="['/new-job']">
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="col-md-6">
-                <button class="btn-add-more">
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
+                    <div class="col-md-12 px-4 mt-5 text-center">
+                        <div class="upload-file">
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_903_53)">
+                                    <path d="M10.2806 11.1823C10.2493 11.1514 10.2071 11.134 10.1631 11.134C10.119 11.134 10.0768 11.1514 10.0455 11.1823L7.62783 13.6C6.50845 14.7194 4.61925 14.838 3.38336 13.6C2.14538 12.362 2.26398 10.4749 3.38336 9.35554L5.80104 6.93785C5.86554 6.87335 5.86554 6.76724 5.80104 6.70274L4.97295 5.87465C4.94167 5.84367 4.89942 5.8263 4.8554 5.8263C4.81137 5.8263 4.76913 5.84367 4.73784 5.87465L2.32016 8.29234C0.559948 10.0525 0.559948 12.9009 2.32016 14.6591C4.08036 16.4172 6.92874 16.4193 8.68687 14.6591L11.1046 12.2414C11.1691 12.1769 11.1691 12.0708 11.1046 12.0063L10.2806 11.1823ZM15.6611 1.32016C13.9009 -0.440053 11.0525 -0.440053 9.29441 1.32016L6.87464 3.73785C6.84367 3.76913 6.82629 3.81138 6.82629 3.8554C6.82629 3.89943 6.84367 3.94167 6.87464 3.97296L7.70065 4.79897C7.76515 4.86347 7.87126 4.86347 7.93576 4.79897L10.3534 2.38128C11.4728 1.2619 13.362 1.1433 14.5979 2.38128C15.8359 3.61925 15.7173 5.50638 14.5979 6.62576L12.1802 9.04344C12.1493 9.07473 12.1319 9.11697 12.1319 9.161C12.1319 9.20503 12.1493 9.24727 12.1802 9.27856L13.0083 10.1066C13.0728 10.1711 13.1789 10.1711 13.2434 10.1066L15.6611 7.68896C17.4192 5.92875 17.4192 3.08037 15.6611 1.32016ZM11.0317 5.08401C11.0004 5.05303 10.9582 5.03566 10.9142 5.03566C10.8702 5.03566 10.8279 5.05303 10.7966 5.08401L6.08401 9.79455C6.05303 9.82584 6.03565 9.86808 6.03565 9.91211C6.03565 9.95613 6.05303 9.99838 6.08401 10.0297L6.90793 10.8536C6.97243 10.9181 7.07854 10.9181 7.14304 10.8536L11.8536 6.14305C11.9181 6.07855 11.9181 5.97244 11.8536 5.90794L11.0317 5.08401Z"
+                                          fill="#737373"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_903_53">
+                                        <rect width="15.9645" height="15.9998" fill="white"
+                                              transform="translate(0.941406)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
 
-          <div class="col-md-12 px-4 mt-5 text-center">
-            <div class="upload-file">
-              <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_903_53)">
-                  <path d="M10.2806 11.1823C10.2493 11.1514 10.2071 11.134 10.1631 11.134C10.119 11.134 10.0768 11.1514 10.0455 11.1823L7.62783 13.6C6.50845 14.7194 4.61925 14.838 3.38336 13.6C2.14538 12.362 2.26398 10.4749 3.38336 9.35554L5.80104 6.93785C5.86554 6.87335 5.86554 6.76724 5.80104 6.70274L4.97295 5.87465C4.94167 5.84367 4.89942 5.8263 4.8554 5.8263C4.81137 5.8263 4.76913 5.84367 4.73784 5.87465L2.32016 8.29234C0.559948 10.0525 0.559948 12.9009 2.32016 14.6591C4.08036 16.4172 6.92874 16.4193 8.68687 14.6591L11.1046 12.2414C11.1691 12.1769 11.1691 12.0708 11.1046 12.0063L10.2806 11.1823ZM15.6611 1.32016C13.9009 -0.440053 11.0525 -0.440053 9.29441 1.32016L6.87464 3.73785C6.84367 3.76913 6.82629 3.81138 6.82629 3.8554C6.82629 3.89943 6.84367 3.94167 6.87464 3.97296L7.70065 4.79897C7.76515 4.86347 7.87126 4.86347 7.93576 4.79897L10.3534 2.38128C11.4728 1.2619 13.362 1.1433 14.5979 2.38128C15.8359 3.61925 15.7173 5.50638 14.5979 6.62576L12.1802 9.04344C12.1493 9.07473 12.1319 9.11697 12.1319 9.161C12.1319 9.20503 12.1493 9.24727 12.1802 9.27856L13.0083 10.1066C13.0728 10.1711 13.1789 10.1711 13.2434 10.1066L15.6611 7.68896C17.4192 5.92875 17.4192 3.08037 15.6611 1.32016ZM11.0317 5.08401C11.0004 5.05303 10.9582 5.03566 10.9142 5.03566C10.8702 5.03566 10.8279 5.05303 10.7966 5.08401L6.08401 9.79455C6.05303 9.82584 6.03565 9.86808 6.03565 9.91211C6.03565 9.95613 6.05303 9.99838 6.08401 10.0297L6.90793 10.8536C6.97243 10.9181 7.07854 10.9181 7.14304 10.8536L11.8536 6.14305C11.9181 6.07855 11.9181 5.97244 11.8536 5.90794L11.0317 5.08401Z" fill="#737373"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_903_53">
-                    <rect width="15.9645" height="15.9998" fill="white" transform="translate(0.941406)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-
-              <span>
+                            <span>
                 Choose File
               </span>
-            </div>
-          </div>
+                        </div>
+                    </div>
 
-          <button class="btn-submit">
-            Submit
-          </button>
-        </form>
-      </div>
+                    <button class="btn-submit" (click)="saveApplication()" [disabled]="!form.valid">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
     </div>
-    <div class="col-md-3"></div>
-  </div>
 </div>
