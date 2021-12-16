@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://api.ompfinex.com',
+  baseUrl: 'https://x8ki-letl-twmt.n7.xano.io/api:bFKqZj63',
 };
