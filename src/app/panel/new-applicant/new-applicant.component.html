@@ -55,7 +55,8 @@
                     </div>
 
                     <div class="col-md-12 px-4 mt-5 text-center">
-                        <div class="upload-file">
+                        <input type="file" style="display: none" #file (change)="uploadFile($event)">
+                        <div class="upload-file" (click)="file.click()">
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_903_53)">
@@ -69,10 +70,9 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-
                             <span>
-                Choose File
-              </span>
+                                Choose File
+                            </span>
                         </div>
                     </div>
 
